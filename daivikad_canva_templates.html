@@ -19,123 +19,170 @@
 
   <style>
 
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: 'Segoe UI', Arial, sans-serif;
-      background: #f4f6fb;
+      background: #eef1f7;
       color: #222;
+      line-height: 1.6;
     }
 
     header {
       background: linear-gradient(135deg, #4e54c8, #8f94fb);
       color: white;
-      padding: 40px 20px;
+      padding: 60px 20px;
       text-align: center;
     }
 
     header h1 {
       margin: 0;
-      font-size: 36px;
+      font-size: 42px;
     }
 
     header p {
-      margin-top: 10px;
-      opacity: 0.9;
+      margin-top: 12px;
+      font-size: 18px;
+      opacity: 0.95;
     }
 
     nav {
       background: white;
       padding: 15px;
       text-align: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
     nav a {
-      margin: 0 15px;
+      margin: 0 20px;
       text-decoration: none;
       color: #4e54c8;
-      font-weight: bold;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    nav a:hover {
+      color: #000;
     }
 
     .container {
-      max-width: 1100px;
+      max-width: 1200px;
       margin: auto;
-      padding: 30px 20px;
+      padding: 40px 20px;
     }
 
     .blog-header {
       background: white;
-      padding: 25px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      margin-bottom: 30px;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      margin-bottom: 40px;
     }
 
     .blog-header h2 {
       margin-top: 0;
       color: #4e54c8;
+      font-size: 28px;
     }
 
     .blog-meta {
       font-size: 14px;
       color: gray;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
 
     .blog-content p {
-      margin-bottom: 15px;
-      line-height: 1.7;
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+
+    #templates h2 {
+      margin-bottom: 20px;
+      color: #4e54c8;
     }
 
     .templates-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-top: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
     }
 
     .template-card {
       background: white;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      transition: 0.3s;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+      border-top: 4px solid #4e54c8;
     }
 
     .template-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
     }
 
     .template-card h3 {
       margin-top: 0;
       color: #4e54c8;
+      font-size: 20px;
+    }
+
+    .template-card p {
+      font-size: 15px;
     }
 
     .button {
       display: inline-block;
-      margin-top: 10px;
-      padding: 10px 15px;
-      background: #4e54c8;
+      margin-top: 12px;
+      padding: 10px 18px;
+      background: linear-gradient(135deg, #4e54c8, #8f94fb);
       color: white;
       text-decoration: none;
-      border-radius: 5px;
+      border-radius: 6px;
       font-size: 14px;
+      font-weight: bold;
+    }
+
+    .button:hover {
+      opacity: 0.9;
     }
 
     .author-box {
       background: white;
-      padding: 20px;
-      margin-top: 30px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      padding: 25px;
+      margin-top: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    .author-box h3 {
+      margin-top: 0;
+      color: #4e54c8;
     }
 
     footer {
       text-align: center;
-      padding: 20px;
-      background: #222;
+      padding: 25px;
+      background: #2c2c2c;
       color: white;
-      margin-top: 40px;
+      margin-top: 50px;
+      font-size: 14px;
+    }
+
+    @media(max-width: 768px) {
+      header h1 {
+        font-size: 30px;
+      }
+
+      .container {
+        padding: 20px;
+      }
     }
 
   </style>
@@ -145,14 +192,13 @@
 
 <header>
   <h1>Daivikad Canva Templates</h1>
-  <p>Temple Poster Templates • Canva Digital Products • Passive Income</p>
+  <p>Create • Download • Sell Canva Templates & Temple Poster Designs</p>
 </header>
 
 <nav>
   <a href="index.html">Home</a>
   <a href="#templates">Templates</a>
   <a href="#about">About</a>
-  <a href="#contact">Contact</a>
 </nav>
 
 <div class="container">
@@ -162,21 +208,25 @@
     <h2>Daivikad Canva Templates – Temple Poster Templates & Digital Products</h2>
 
     <div class="blog-meta">
-      Published on Feb 19, 2026 • Author: Daivikad
+      Published on Feb 19, 2026 • By Daivikad
     </div>
 
     <div class="blog-content">
 
       <p>
-        Welcome to Daivikad Canva Templates. Here you can explore high-quality temple poster templates designed using Canva. These templates help temples, designers, and creators create professional spiritual posters easily.
+        Welcome to Daivikad Canva Templates. This website provides professional Canva templates including temple poster templates, festival posters, pooja posters, and business designs.
       </p>
 
       <p>
-        Canva templates are one of the best digital products for earning passive income. You can create templates once and sell them multiple times.
+        Canva templates help designers, temples, and creators quickly create beautiful and professional designs without advanced skills.
       </p>
 
       <p>
-        Daivikad focuses on creating temple poster templates, spiritual designs, and professional Canva templates.
+        These templates can also help you earn passive income by selling digital products online.
+      </p>
+
+      <p>
+        Explore the templates below and start using Canva templates created by Daivikad.
       </p>
 
     </div>
@@ -186,31 +236,31 @@
 
   <section id="templates">
 
-    <h2>Featured Canva Templates by Daivikad</h2>
+    <h2>Featured Canva Templates</h2>
 
     <div class="templates-grid">
 
       <div class="template-card">
         <h3>Temple Poster Template</h3>
-        <p>Professional spiritual Canva poster template for temples.</p>
+        <p>Editable Canva template designed for temples and spiritual events.</p>
         <a href="#" class="button">Use Template</a>
       </div>
 
       <div class="template-card">
         <h3>Festival Poster Template</h3>
-        <p>Perfect for temple festivals and announcements.</p>
+        <p>Create stunning posters for temple festivals and celebrations.</p>
         <a href="#" class="button">Use Template</a>
       </div>
 
       <div class="template-card">
         <h3>Pooja Poster Template</h3>
-        <p>Create beautiful pooja and spiritual event posters.</p>
+        <p>Professional template for pooja announcements and events.</p>
         <a href="#" class="button">Use Template</a>
       </div>
 
       <div class="template-card">
         <h3>Business Poster Template</h3>
-        <p>Editable Canva template for business promotions.</p>
+        <p>Modern Canva template for business promotions and marketing.</p>
         <a href="#" class="button">Use Template</a>
       </div>
 
@@ -224,7 +274,7 @@
     <h3>About Daivikad</h3>
 
     <p>
-      Daivikad is a Canva template creator focused on temple poster templates and digital products. This blog helps creators learn Canva and earn passive income.
+      Daivikad is a Canva template creator specializing in temple poster templates and digital products. This platform helps creators learn Canva and download professional templates.
     </p>
 
   </div>
